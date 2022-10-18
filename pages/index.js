@@ -20,6 +20,7 @@ export const data = [
 
 export default function Home() {
   const [biodata, setBiodata] = React.useState(null);
+  // fetch
   const [fetchedData, setFetchedData] = React.useState(null);
   // hash
   const [name, setName] = React.useState(null);
@@ -60,7 +61,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div>
-          <h1 className={styles.title}>Array of Object Data</h1>
+          <h1 className={styles.title}>Array of Object Data 1-2</h1>
           <ul>
             {biodata?.map((data, index) => (
               <div key={index}>
@@ -82,7 +83,7 @@ export default function Home() {
           </ul>
         </div>
         <div>
-          <h1 className={styles.title}>Fetch Data</h1>
+          <h1 className={styles.title}>Fetch Data 3-5</h1>
           <button
             onClick={() =>
               fetch(`http://jsonplaceholder.typicode.com/posts`)
@@ -119,6 +120,14 @@ export default function Home() {
                       >
                         Delete
                       </button>
+                      <button
+                        onClick={() => {
+                          setFetchedData((old) => [...old, delete data.body]);
+                          console.log(data.body);
+                        }}
+                      >
+                        Delete Body
+                      </button>
                     </td>
                   </tr>
                 )
@@ -127,7 +136,7 @@ export default function Home() {
           </table>
         </div>
         <div>
-          <h1 className={styles.title}>Hash SHA256</h1>
+          <h1 className={styles.title}>Hash SHA256 7</h1>
           <div>
             <label>
               Date:
@@ -151,7 +160,7 @@ export default function Home() {
           {hashed && <p>HASHED: {hashed}</p>}
         </div>
         <div>
-          <h1 className={styles.title}>Auth Page</h1>
+          <h1 className={styles.title}>Auth Page 9 </h1>
           {loggedIn ? (
             <div>
               <p>Welcome, {username}</p>
