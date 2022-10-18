@@ -83,7 +83,7 @@ export default function Home() {
           </ul>
         </div>
         <div>
-          <h1 className={styles.title}>Fetch Data 3-5</h1>
+          <h1 className={styles.title}>Fetch Data 3-6</h1>
           <button
             onClick={() =>
               fetch(`http://jsonplaceholder.typicode.com/posts`)
